@@ -2,7 +2,9 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Resim', {
     Id: {
-      type: DataTypes.DECIMAL,
+      autoIncrement: true,
+      autoIncrementIdentity: true,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       unique: "Resim_Id_key"
@@ -19,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'Resim',
     schema: 'public',
-    timestamps: false,
+    timestamps: true,
     indexes: [
       {
         name: "Resim_Id_key",

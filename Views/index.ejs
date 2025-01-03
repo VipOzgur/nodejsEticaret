@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürün Listesi</title>
+</head>
+<body>
+  <h1>Ürün Listesi</h1>
+  <a href="/products/new">Yeni Ürün Ekle</a>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <strong><%= product.name %></strong> - ₺<%= product.price %> (Stok: <%= product.stock %>)
+        <a href="/products/<%= product.id %>/edit">Düzenle</a>
+        <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit">Sil</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

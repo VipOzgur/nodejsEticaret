@@ -2,12 +2,14 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Teslimat', {
     Id: {
-      type: DataTypes.DECIMAL,
+      autoIncrement: true,
+      autoIncrementIdentity: true,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
     SiparisId: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Siparis',
@@ -30,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'Teslimat',
     schema: 'public',
-    timestamps: false,
+    timestamps: true,
     indexes: [
       {
         name: "Teslimat_SiparisId_idx",

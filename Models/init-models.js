@@ -9,6 +9,7 @@ var _Odeme = require("./Odeme");
 var _Resim = require("./Resim");
 var _Sepet = require("./Sepet");
 var _SepetDetay = require("./SepetDetay");
+var _SequelizeMeta = require("./SequelizeMeta");
 var _Siparis = require("./Siparis");
 var _SiparisDetay = require("./SiparisDetay");
 var _Tedarikci = require("./Tedarikci");
@@ -30,6 +31,7 @@ function initModels(sequelize) {
   var Resim = _Resim(sequelize, DataTypes);
   var Sepet = _Sepet(sequelize, DataTypes);
   var SepetDetay = _SepetDetay(sequelize, DataTypes);
+  var SequelizeMeta = _SequelizeMeta(sequelize, DataTypes);
   var Siparis = _Siparis(sequelize, DataTypes);
   var SiparisDetay = _SiparisDetay(sequelize, DataTypes);
   var Tedarikci = _Tedarikci(sequelize, DataTypes);
@@ -90,6 +92,7 @@ function initModels(sequelize) {
     Resim,
     Sepet,
     SepetDetay,
+    SequelizeMeta,
     Siparis,
     SiparisDetay,
     Tedarikci,

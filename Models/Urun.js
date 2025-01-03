@@ -2,7 +2,9 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Urun', {
     Id: {
-      type: DataTypes.DECIMAL,
+      autoIncrement: true,
+      autoIncrementIdentity: true,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
@@ -11,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     KategoriId: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Kategori',
@@ -35,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     TedarikciId: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Tedarikci',
@@ -90,7 +92,7 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'Urun',
     schema: 'public',
-    timestamps: false,
+    timestamps: true,
     indexes: [
       {
         name: "Urun_KategoriId_idx",

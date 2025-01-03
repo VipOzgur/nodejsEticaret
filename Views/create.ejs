@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yeni Ürün Ekle</title>
+</head>
+<body>
+  <h1>Yeni Ürün Ekle</h1>
+  <form action="/products" method="POST">
+    <label for="name">Ürün Adı:</label>
+    <input type="text" name="name" id="name" required>
+    <br>
+    <label for="price">Fiyat:</label>
+    <input type="number" name="price" id="price" required>
+    <br>
+    <label for="stock">Stok:</label>
+    <input type="number" name="stock" id="stock">
+    <br>
+    <button type="submit">Ekle</button>
+  </form>
+</body>
+</html>
