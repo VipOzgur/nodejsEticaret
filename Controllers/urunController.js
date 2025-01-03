@@ -78,8 +78,8 @@ const UrunController = {
 
 
  //Doğrudan erişim yöntemleri
- async function getAllUrunDirect() {
-   return await Urun.findAll();
+  function getAllUrunDirect() {
+   return  Urun.findAll();
  }
 
 async function getUrunByIdDirect(id) {
